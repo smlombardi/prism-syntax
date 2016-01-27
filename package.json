@@ -1,0 +1,15 @@
+{
+  "name": "prism-syntax",
+  "theme": "syntax",
+  "version": "0.0.0",
+  "description": "Based on the default PrismJS syntax coloring",
+  "keywords": [
+    "syntax",
+    "theme"
+  ],
+  "repository": "https://github.com/atom/prism-syntax",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}
