@@ -62,23 +62,46 @@ atom-text-editor .search-results .marker.current-result .region,
   border: 1px solid @syntax-result-marker-color-selected;
 }
 
-.comment {
-  color: @light-gray;
+.comment, .punctuation.definition.comment {
+  color: lighten(#708090, 20%);
 }
 
 .keyword {
   color: @purple;
 
   &.control {
-    color: @purple;
+    color: @blue;
   }
 
   &.operator {
-    color: @syntax-text-color;
+    color: @brown;
+    &.typeof, &.instanceof {
+      color: @blue;
+    }
+    &.in.js {
+      color: @blue;
+    }
+    &.logical {
+      color: @brown;
+    }
+    &.assignment {
+      color: @brown;
+    }
+    &.new {
+      color: @blue;
+    }
+    &.quantifier.regexp,
+    &.negation.regexp,
+    &.or.regexp {
+      color: @orange;
+    }
   }
 
   &.other.special-method {
     color: @blue;
+  }
+  &.other.back-reference.regexp {
+    color: @red;
   }
 
   &.other.unit {
@@ -87,31 +110,30 @@ atom-text-editor .search-results .marker.current-result .region,
 }
 
 .storage {
-  color: @purple;
+  color: @blue;
 }
 
 .constant {
   color: @orange;
-
   &.character.escape {
     color: @cyan;
   }
-
   &.numeric {
-    color: @orange;
+    color: @plum;
   }
-
   &.other.color {
     color: @cyan;
   }
-
   &.other.symbol {
     color: @green;
+  }
+  &.language {
+    color: @blue;
   }
 }
 
 .variable {
-  color: @red;
+  color: @blue;
 
   &.interpolation {
     color: darken(@red, 10%);
@@ -132,8 +154,10 @@ atom-text-editor .search-results .marker.current-result .region,
 
 
   &.regexp {
-    color: @cyan;
-
+    color: @orange;
+    .punctuation.definition.string {
+      color: @plum;
+    }
     .source.ruby.embedded {
       color: @orange;
     }
@@ -147,14 +171,15 @@ atom-text-editor .search-results .marker.current-result .region,
 .punctuation {
   &.definition {
     &.comment {
-      color: @light-gray;
+      color: #a59999;
     }
 
     &.string,
     &.variable,
     &.parameters,
-    &.array {
-      color: @syntax-text-color;
+    &.array,
+    &.terminator {
+      color: @green;
     }
 
     &.heading,
@@ -173,32 +198,48 @@ atom-text-editor .search-results .marker.current-result .region,
     }
   }
 
-  &.section.embedded {
-    color: darken(@red, 10%);
+  &.section {
+    color: #99999d;
+  }
+  &.terminator {
+    color: #99999d;
+  }
+  &.section.property-list {
+    color:#a59999;
   }
 
 }
 
 .support {
   &.class {
-    color: @light-orange;
+    color: @plum;
   }
-
   &.function  {
-    color: @cyan;
+    color: @magenta;
 
     &.any-method {
       color: @blue;
+    }
+  }
+  &.constant {
+    color: @magenta;
+  }
+  &.constant.dom.js {
+    color: @syntax-text-color;
+  }
+  &.type {
+    &.propery-name.css {
+      color: @plum;
     }
   }
 }
 
 .entity {
   &.name.function {
-    color: @blue;
+    color: @syntax-text-color;
   }
   &.name.type {
-    color: @light-orange;
+    color: @plum;
     text-decoration: underline;
   }
 
@@ -235,6 +276,9 @@ atom-text-editor .search-results .marker.current-result .region,
   &.link {
     color: @orange;
   }
+  &.delimiter {
+    color: #9999a0;
+  }
 
   &.require {
     color: @blue;
@@ -247,6 +291,9 @@ atom-text-editor .search-results .marker.current-result .region,
   &.separator {
     background-color: @gray;
     color: @syntax-text-color;
+  }
+  &.brace {
+    color: #a59999;
   }
 }
 
@@ -300,6 +347,136 @@ atom-text-editor .search-results .marker.current-result .region,
     color: @green;
   }
 }
+
+//css
+.entity.other.attribute-name.class.css,
+.entity.other.attribute-name.id.css,
+.entity.name.tag.css {
+  color: @green;
+}
+.entity.other.attribute-name.pseudo-class.css {
+  color: @purple;
+}
+.entity.other.attribute-name.pseudo-element.css {
+  color: @cyan;
+}
+.support.type.property-name.css {
+  color: @plum;
+}
+.punctuation.separator.key-value.css {
+  color: #9999dd;
+}
+.meta.at-rule.import.css,
+.keyword.control.at-rule.import.css,
+.punctuation.definition.keyword.css,
+.punctuation.definition.keyword.scss {
+  color: @blue;
+}
+
+.meta.at-rule.import.css {
+  .variable.parameter.url.css,
+  .support.function.url.css,
+  .punctuation.section.function.css {
+    color: @brown;
+    background-color: #faf8f7;
+  }
+}
+
+.meta.at-rule.font-face.css {
+  .support.function.misc.css,
+  .variable.parameter.misc.css,
+  .punctuation.section.function.css {
+    color: @brown;
+    background-color: #faf8f7;
+  }
+}
+
+.string.quoted.single.css, .string.quoted.double.css,
+.string.quoted.single.scss, .string.quoted.double.scss  {
+  color: @brown;
+  background-color: #faf8f7;
+}
+.support.constant.property-value.css,
+.support.constant.font-name.css,
+.meta.property-value.css,
+.constant.numeric.css,
+.keyword.other.unit.css,
+.support.constant.color.w3c-standard-color-name.css,
+.constant.other.color.rgb-value.css {
+  color: @syntax-text-color;
+}
+
+.constant.other.color.rgb-value.css .punctuation.definition.constant.css {
+  color: @syntax-text-color;
+}
+
+//html
+.meta.tag.inline.any.html,
+.entity.name.tag.inline.any.html,
+.meta.tag.block.any.html,
+.entity.name.tag.block.any.html {
+  color: @plum;
+}
+.punctuation.definition.tag.begin.html,
+.punctuation.definition.tag.end.html,
+.punctuation.separator.key-value.html,
+.punctuation.definition.string.begin.html,
+.punctuation.definition.string.end.html {
+  color: #99999d;
+}
+.meta.tag.sgml.doctype.html {
+  color: #708090;
+}
+.entity.other.attribute-name.html {
+  color: @green;
+}
+.string.quoted.double.html {
+  color: @blue;
+}
+.invalid.illegal.bad-ampersand.html {
+  color: @brown;
+  background-color: @syntax-background-color;
+}
+.constant.character.entity.html {
+  color: @brown;
+}
+
+//scss -  mostly dupes of above with .scss instead of .css
+.support.constant.property-value.scss,
+.support.constant.font-name.scss,
+.meta.property-value.scss,
+.constant.numeric.scss,
+.keyword.other.unit.scss,
+.support.constant.color.w3c-standard-color-name.scss,
+.constant.other.color.rgb-value.scss {
+  color: @syntax-text-color;
+}
+
+.constant.other.color.rgb-value.scss
+.punctuation.definition.constant.scss {
+  color: @syntax-text-color;
+}
+.entity.other.attribute-name.pseudo-class.scss {
+  color: @purple;
+}
+.entity.other.attribute-name.pseudo-element.scss {
+  color: @cyan;
+}
+.support.type.property-name.scss {
+  color: @plum;
+}
+.entity.other.attribute-name.class.scss,
+.entity.other.attribute-name.id.scss,
+.entity.name.tag.scss {
+  color: @green;
+}
+.keyword.other.important.scss {
+  color: @red;
+}
+
+
+
+
 
 atom-text-editor[mini] .scroll-view,
 :host([mini]) .scroll-view {
