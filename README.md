@@ -6,8 +6,6 @@ Inspired by the web page syntax-coloring js library, [PrismJS](http://prismjs.co
 
 ![HTML](https://raw.githubusercontent.com/smlombardi/prism-syntax/master/images/html.png)
 
-
-
 ## SCSS
 
 ![SCSS](https://raw.githubusercontent.com/smlombardi/prism-syntax/master/images/scss.png)
