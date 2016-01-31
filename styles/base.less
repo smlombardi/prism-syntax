@@ -63,7 +63,7 @@ atom-text-editor .search-results .marker.current-result .region,
 }
 
 .comment, .punctuation.definition.comment {
-  color: lighten(#708090, 20%);
+  color: #708090;
 }
 
 .keyword {
@@ -142,7 +142,11 @@ atom-text-editor .search-results .marker.current-result .region,
   &.parameter.function {
     color: @syntax-text-color;
   }
+
 }
+
+
+
 
 .invalid.illegal {
   background-color: @red;
@@ -348,6 +352,32 @@ atom-text-editor .search-results .marker.current-result .region,
   }
 }
 
+
+// some direct js
+.variable.other.property.js, .meta.function.json.js .entity.name.function.js {
+  color: @syntax-text-color !important;
+}
+
+.entity.name.function.js {
+  color: @magenta;
+}
+.meta.method-call.js  .variable.other.property.js {
+  color: @magenta;
+}
+.support.constant.dom.js {
+  color: @cyan;
+}
+.variable.parameter.function.js {
+  color: @blue;
+  font-style: italic;
+}
+.storage.type.function.js {
+  color: @blue;
+  font-weight: bold;
+}
+
+
+
 //css
 .entity.other.attribute-name.class.css,
 .entity.other.attribute-name.id.css,
@@ -393,8 +423,8 @@ atom-text-editor .search-results .marker.current-result .region,
 
 .string.quoted.single.css, .string.quoted.double.css,
 .string.quoted.single.scss, .string.quoted.double.scss  {
-  color: @brown;
-  background-color: #faf8f7;
+  color: @green;
+  background-color: @syntax-background-color;
 }
 .support.constant.property-value.css,
 .support.constant.font-name.css,
@@ -472,6 +502,9 @@ atom-text-editor .search-results .marker.current-result .region,
 }
 .keyword.other.important.scss {
   color: @red;
+}
+.variable.scss {
+  color: @orange;
 }
 
 
