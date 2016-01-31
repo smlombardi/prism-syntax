@@ -1,5 +1,18 @@
-# prism-syntax theme
+# Prism-Syntax
 
-A short description of your theme.
+Inspired by the web page syntax-coloring js library, [PrismJS](http://prismjs.com). I would've preferred to get a bit more granular, but Prism detects and colors scopes that Atom doesn't have yet, especially in JS.  Hopefully, this will improve and I'll keep updating it.
 
-![A screenshot of your theme](https://f.cloud.github.com/assets/69169/2289498/4c3cb0ec-a009-11e3-8dbd-077ee11741e5.gif)
+## HTML
+
+![](https://raw.githubusercontent.com/smlombardi/prism-syntax/master/images/html.png)
+
+
+
+## SCSS
+
+![](https://raw.githubusercontent.com/smlombardi/prism-syntax/master/images/scss.png)
+
+## JS
+
+![](https://raw.githubusercontent.com/smlombardi/prism-syntax/master/images/js.png)
+
