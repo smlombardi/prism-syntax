@@ -4,15 +4,14 @@ Inspired by the web page syntax-coloring js library, [PrismJS](http://prismjs.co
 
 ## HTML
 
-![](https://raw.githubusercontent.com/smlombardi/prism-syntax/master/images/html.png)
+![HTML](https://raw.githubusercontent.com/smlombardi/prism-syntax/master/images/html.png)
 
 
 
 ## SCSS
 
-![](https://raw.githubusercontent.com/smlombardi/prism-syntax/master/images/scss.png)
+![SCSS](https://raw.githubusercontent.com/smlombardi/prism-syntax/master/images/scss.png)
 
 ## JS
 
 ![](https://raw.githubusercontent.com/smlombardi/prism-syntax/master/images/js.png)
-
