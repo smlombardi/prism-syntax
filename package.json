@@ -1,7 +1,7 @@
 {
   "name": "prism-syntax",
   "theme": "syntax",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Inspired by default PrismJS syntax coloring",
   "keywords": [
     "syntax",
