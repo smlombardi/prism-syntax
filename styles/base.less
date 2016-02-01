@@ -62,8 +62,8 @@ atom-text-editor .search-results .marker.current-result .region,
   border: 1px solid @syntax-result-marker-color-selected;
 }
 
-.comment, .punctuation.definition.comment {
-  color: #708090;
+.comment, .punctuation.definition.comment, .punctuation.definition.comment.html {
+  color: hsla(210, 12%, 50%, 50%);
 }
 
 .keyword {
@@ -444,7 +444,9 @@ atom-text-editor .search-results .marker.current-result .region,
 .meta.tag.inline.any.html,
 .entity.name.tag.inline.any.html,
 .meta.tag.block.any.html,
-.entity.name.tag.block.any.html {
+.entity.name.tag.html
+.entity.name.tag.block.any.html,
+.entity.name.tag.other.html {
   color: @plum;
 }
 .punctuation.definition.tag.begin.html,
@@ -457,7 +459,8 @@ atom-text-editor .search-results .marker.current-result .region,
 .meta.tag.sgml.doctype.html {
   color: #708090;
 }
-.entity.other.attribute-name.html {
+.entity.other.attribute-name.html,
+.meta.attribute.html.angular .entity.other.attribute-name.html.angular {
   color: @green;
 }
 .string.quoted.double.html {
