@@ -62,9 +62,13 @@ atom-text-editor .search-results .marker.current-result .region,
   border: 1px solid @syntax-result-marker-color-selected;
 }
 
-.comment, .punctuation.definition.comment, .punctuation.definition.comment.html {
+.comment {
   color: hsla(210, 12%, 50%, 50%);
   font-style: italic;
+}
+
+.punctuation.definition.comment, .punctuation.definition.comment.html {
+  font-style: normal;
 }
 
 .keyword {
